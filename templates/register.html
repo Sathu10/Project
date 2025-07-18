@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CARVERSE | Multi-Brand Car Showroom Registration</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0F2C59;
+            --secondary: #F8B400;
+            --accent: #E21818;
+            --light: #FBFBFB;
+            --dark: #222222;
+            --gray: #6B7280;
+            --gray-light: #E5E7EB;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .register-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 100vh;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-section {
+            padding: 60px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .visual-section {
+            position: relative;
+            overflow: hidden;
+            background-image: url('images/photo-collage.png.png');
+            background-size: cover;
+            background-position: center;
+}
+
+
+     
+
+        h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 10px;
+            line-height: 1.2;
+        }
+
+        .subtitle {
+            color: var(--gray);
+            margin-bottom: 40px;
+            font-size: 1.1rem;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--dark);
+        }
+
+        input, select {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid var(--gray-light);
+            border-radius: 8px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(15, 44, 89, 0.1);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+
+        .brand-options {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .brand-option {
+            position: relative;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .brand-option input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        .brand-label {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 15px;
+            border: 1px solid var(--gray-light);
+            border-radius: 8px;
+            background-color: white;
+            transition: all 0.3s;
+            text-align: center;
+        }
+
+        .brand-icon {
+            width: 40px;
+            height: 40px;
+            margin-bottom: 10px;
+        }
+
+        .brand-option input:checked + .brand-label {
+            border-color: var(--primary);
+            background-color: rgba(15, 44, 89, 0.05);
+            box-shadow: 0 0 0 2px var(--primary);
+        }
+
+
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: center;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .btn:hover {
+            background-color: #0a2040;
+            transform: translateY(-2px);
+        }
+
+        .login-link {
+            text-align: center;
+            margin-top: 20px;
+            color: var(--gray);
+        }
+
+        .login-link a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .visual-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(15, 44, 89, 0.8) 0%, rgba(242, 153, 74, 0.6) 100%);
+        }
+
+        .brand-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            padding: 50px;
+            align-content: center;
+            height: 100%;
+            position: relative;
+            z-index: 2;
+        }
+
+        .brand-item {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+        }
+
+        .brand-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgb(255, 255, 255);
+            
+        }
+
+        .brand-item img {
+            width: 100%;
+            height: 150px;
+            object-fit: contain;
+            margin-bottom: 20px;
+        }
+
+        .brand-title {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .terms-check {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .terms-check input {
+            width: auto;
+            margin-right: 10px;
+        }
+
+        .terms-text {
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+
+        @media (max-width: 992px) {
+            .register-wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            .visual-section {
+                display: none;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .brand-options {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .form-section {
+                padding: 40px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="register-wrapper">
+        <div class="form-section">
+            <div class="container">
+                <img src="/project-/static/Image/LOGO.png" alt="CAR-VERSE logo in bold uppercase letters with a modern sans-serif font in navy blue" class="brand-logo">
+                <h1>Create your CAR-VERSE account</h1>
+                <p class="subtitle">Join our exclusive club and get access to premium vehicles from the world's leading brands.</p>
+
+                <form id="registrationForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name</label>
+                            <input type="text" id="firstName" name="firstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name</label>
+                            <input type="text" id="lastName" name="lastName" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="dob">Date of Birth</label>
+                            <input type="date" id="dob" name="dob" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" required minlength="8">
+                    </div>
+
+                    <div class="form-group">
+                        <label> <b>OUR ELITE COLLECTIONS</b></label>
+                        <div class="brand-options">
+                            <div class="brand-option">
+                               
+                                <label for="tata" class="brand-label">
+                                    <img src="/project-/static/Image/tata.png" alt="Tata logo with bold lettering" class="brand-icon">
+                                    Tata
+                                </label>
+                            </div>
+                            <div class="brand-option">
+                               
+                                <label for="toyota" class="brand-label">
+                                    <img src="/project-/static/Image/TOYOTA.png" alt="Toyota logo with bold lettering" class="brand-icon">
+                                    Toyota
+                                </label>
+                            </div>
+                            <div class="brand-option">
+                               
+                                <label for="honda" class="brand-label">
+                                    <img src="images/HONDA.png" alt="Honda logo with bold lettering" class="brand-icon">
+                                    Honda
+                                </label>
+                            </div>
+                            <div class="brand-option">
+                                <label for="suzuki" class="brand-label">
+                                    <img src="images/SUZUKI.png" alt="Suzuki logo with bold lettering" class="brand-icon">
+                                    Suzuki
+                                </label>
+                            </div>
+                            <div class="brand-option">
+                               
+                                <label for="Hyundai" class="brand-label">
+                                    <img src="images/Hyundai.png" alt="Hyundai logo with bold lettering" class="brand-icon">
+                                    Hyundai
+                                </label>
+                            </div>
+                            <div class="brand-option">
+                              
+                                <label for="bmw" class="brand-label">
+                                    <img src="images/bmw.png" alt="BMW roundel logo with blue and white quadrants" class="brand-icon">
+                                    BMW
+                                </label>
+                            </div>
+                            <div class="brand-option">
+                               
+                                <label for="mercedes" class="brand-label">
+                                    <img src="images/benz.png" alt="Mercedes-Benz three-pointed star logo in silver" class="brand-icon">
+                                    Mercedes
+                                </label>
+                            </div>
+                            <div class="brand-option">
+                               
+                                <label for="porsche" class="brand-label">
+                                    <img src="images/porsche.png" alt="Porsche crest with black, red, and gold elements featuring a horse" class="brand-icon">
+                                    Porsche
+                                </label>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                    <div class="terms-check">
+                        <input type="checkbox" id="terms" name="terms" required>
+                        <label for="terms" class="terms-text">I agree to the Terms of Service and Privacy Policy</label>
+                    </div>
+
+                    <button type="submit" class="btn">Create Account</button>
+                </form>
+
+                <p class="login-link">Already have an account? <a href="login.html">Log in</a></p>
+            </div>
+        </div>
+
+        <div class="visual-section">
+            <div class="visual-overlay"></div>
+            <div class="brand-grid">
+                
+                <div class="brand-item">
+                    <img src="images/HONDA.png" alt="Red Honda Civic on race track with speed blur effect">
+                    <h3 class="brand-title">Honda Experience</h3>
+                    <p>The Power of Dreams</p>
+                </div>
+                <div class="brand-item">
+                    <img src="images/TOYOTA.png" alt="Red Toyota Supra on race track with speed blur effect">
+                    <h3 class="brand-title">Toyota Adventure</h3>
+                    <p>Let’s Go Places</p>
+                </div>
+                <div class="brand-item">
+                    <img src="images/tata.png" alt="Red Tata Nano on race track with speed blur effect">
+                    <h3 class="brand-title">Tata Safety</h3>
+                    <p>Connecting Aspirations</p>
+                </div>
+                <div class="brand-item">
+                    <img src="images/SUZUKI.png" alt="Red Suzuki Swift on race track with speed blur effect">
+                    <h3 class="brand-title">Suzuki Affordability</h3>
+                    <p>Way of Life.</p>
+                </div>
+                <div class="brand-item">
+                    <img src="images/Hyundai.png" alt="Red Hyundai Elantra on race track with speed blur effect">
+                    <h3 class="brand-title">Hyundai Class</h3>
+                    <p>New Thinking. New Possibilities</p>
+                </div>
+                <div class="brand-item">
+                    <img src="images/bmw.png" alt="White BMW M8 Competition coupe on scenic mountain road">
+                    <h3 class="brand-title">BMW Performance</h3>
+                    <p>Discover the ultimate driving machines that define automotive excellence.</p>
+                </div>
+                <div class="brand-item">
+                    <img src="images/benz.png" alt="Black Mercedes-Benz S-Class sedan with luxury interior illuminated at night">
+                    <h3 class="brand-title">Mercedes Luxury</h3>
+                    <p>The standard of the world in automotive luxury and innovation.</p>
+                </div>
+                <div class="brand-item">
+                    <img src="images/porsche.png" alt="Red Porsche 911 GT3 on race track with speed blur effect">
+                    <h3 class="brand-title">Porsche Precision</h3>
+                    <p>Pure performance and timeless design from the sports car specialist.</p>
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+
+    <script>
+        document.getElementById('registrationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Validate brand selection (max 3)
+            const selectedBrands = document.querySelectorAll('input[name="brand"]:checked');
+            if (selectedBrands.length > 3) {
+                alert('Please select no more than 3 brands');
+                return;
+            }
+            
+            if (selectedBrands.length === 0) {
+                alert('Please select at least one brand you are interested in');
+                return;
+            }
+            
+            // Get form data
+            const formData = {
+                firstName: document.getElementById('firstName').value,
+                lastName: document.getElementById('lastName').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                dob: document.getElementById('dob').value,
+                password: document.getElementById('password').value,
+                brands: Array.from(selectedBrands).map(brand => brand.value),
+                terms: document.getElementById('terms').checked
+            };
+            
+            // Here you would typically send the data to a server
+            console.log('Form submitted:', formData);
+            
+            // Show success message
+            alert('Registration successful! Welcome to CARVERSE. A confirmation has been sent to your email.');
+            
+            // Reset form
+            this.reset();
+        });
+
+        // Limit brand selection to 3
+        document.querySelectorAll('input[name="brand"]').forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                const selectedBrands = document.querySelectorAll('input[name="brand"]:checked');
+                if (selectedBrands.length > 3) {
+                    this.checked = false;
+                }
+            });
+        });
+    </script>
+</body>
+</html>

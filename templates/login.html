@@ -1,0 +1,58 @@
+<!-- login.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CARVERSE | Login</title>
+    <link rel="stylesheet" href="static/login.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="login-wrapper">
+        <div class="form-section">
+            <div class="container">
+                <img src="d:\Python Project\Prject 1\register\images\LOGO.png" alt="CAR-VERSE logo" class="brand-logo" width="150" height="150">
+                <h1>Welcome Back</h1>
+                <p class="subtitle">Login to your CAR-VERSE account to access premium vehicle selections.</p>
+                
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+
+                    <button type="submit" class="btn">Login</button>
+                </form>
+
+                <p class="signup-link">Don't have an account? <a href="/project-/templates/register.html">Register Now</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script >
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+
+    // Dummy login check (Replace with real API call)
+    if (email && password) {
+        alert('Login successful! Welcome back to CARVERSE.');
+        // Redirect or process further
+    } else {
+        alert('Please enter valid credentials.');
+    }
+
+    // Reset form (optional)
+    this.reset();
+});
+    </script>
+</body>
+</html>

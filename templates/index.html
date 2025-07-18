@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CarVerse India - Hero</title>
+  <link rel="stylesheet" href="/static/style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<header class="header">
+  <div class="container">
+    
+    <div class="logo">
+      <a href="#">CarVerse <span>India</span></a>
+    </div>
+    <nav class="nav">
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+       <li class="dropdown">
+          <a href="#" class="dropbtn">Brands</a>
+          <div class="dropdown-content">
+            <a href="/cars/maruti-suzuki"> Suzuki</a>
+            <a href="/cars/tata">Tata</a>
+            <a href="/cars/mahindra">Mahindra</a>
+            <a href="/cars/hyundai">Hyundai</a>
+            <a href="/cars/kia">Kia</a>
+            <a href="/cars/toyota">Toyota</a>
+            <a href="/cars/honda">Honda</a>
+            <a href="/cars/mg">MG</a>
+          </div>
+        </li>
+        <li><a href="#" id="tools-btn">Tools</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+      </ul>
+     <a href="/login" class="login-btn">Login</a>
+      <a href="/register" class="register-btn">Register</a>
+    </nav>
+  </div>
+</header>
+
+<body>
+  
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Explore Every Indian Car. Smarter.</h1>
+      <p>Get specs, prices, EMI, and reviews at your fingertips.</p>
+      <div class="hero-buttons">
+        <a href="#all-cars" class="btn primary">View All Cars</a>
+      </div>
+    </div>
+  </section>
+  <section class="brands-section" id="brands">
+  <div class="brands-container">
+    <h2>Popular Car Brands in India</h2>
+    <div class="brand-logos">
+      <div class="brand"><img src="/static/Image/suzuki.jpg" alt="Suzuki"></div>
+      <div class="brand"><img src="/static/Image/tata.jpg" alt="Tata"></div>
+      <div class="brand"><img src="/static/Image/mahindra.jpg" alt="Mahindra"></div>
+      <div class="brand"><img src="/static/Image/hyundai.png" alt="Hyundai"></div>
+      <div class="brand"><img src="/static/Image/Kia.png" alt="Kia"></div>
+      <div class="brand"><img src="/static/Image/toyota.jpg" alt="Toyota"></div>
+      <div class="brand"><img src="/static/Image/honda.jpg" alt="Honda"></div>
+      <div class="brand"><img src="/static/Image/mg.png" alt="MG"></div>
+    </div>
+  </div>
+</section>
+<section class="featured-section" id="featured">
+  <div class="featured-container">
+    <h2> Featured Cars of the Month</h2>
+    <div class="car-grid">
+
+      <!-- Card 1 -->
+      <div class="car-card">
+        <img src="static/Image/tata-nexon.jpg" alt="Tata Nexon">
+        <h3>Tata Nexon</h3>
+        <p>₹8.10 Lakh – ₹14.70 Lakh</p>
+        <div class="rating">⭐⭐⭐⭐☆</div>
+        <a href="#" class="btn-car">View Details</a>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="car-card">
+        <img src="/static/Image/suzuki car.png" alt="suzuki Fronx">
+        <h3>Maruti Fronx</h3>
+        <p>₹7.46 Lakh – ₹13.13 Lakh</p>
+        <div class="rating">⭐⭐⭐⭐☆</div>
+        <a href="#" class="btn-car">View Details</a>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="car-card">
+        <img src="/static/Image/hyundai car.jpg" alt="Hyundai Creta">
+        <h3>Hyundai Creta</h3>
+        <p>₹11.00 Lakh – ₹20.15 Lakh</p>
+        <div class="rating">⭐⭐⭐⭐⭐</div>
+        <a href="#" class="btn-car">View Details</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+<section class="luxury-section" id="luxury">
+  <div class="featured-container">
+    <h2>✨ Luxury Cars in India</h2>
+    <div class="car-grid">
+
+      <!-- Luxury Car 1 -->
+      <div class="car-card">
+        <img src="/static/Image/Porsche.png" alt="Porsche 911">
+        <h3>Porsche 911</h3>
+        <p>₹61.00 Lakh – ₹67.76 Lakh</p>
+        <div class="rating">⭐⭐⭐⭐⭐</div>
+        <a href="#" class="btn-car">View Details</a>
+      </div>
+
+      <!-- Luxury Car 2 -->
+      <div class="car-card">
+        <img src="/static/Image/BMW.png" alt="BMW ">
+        <h3>BMW 5 Series</h3>
+        <p>₹68.90 Lakh – ₹74.50 Lakh</p>
+        <div class="rating">⭐⭐⭐⭐☆</div>
+        <a href="#" class="btn-car">View Details</a>
+      </div>
+
+      <!-- Luxury Car 3 -->
+      <div class="car-card">
+        <img src="/static/Image/mercedes.jpg" alt="Mercedes E-Class">
+        <h3>Mercedes-Benz E-Class</h3>
+        <p>₹88.00 Lakh – ₹97.00 Lakh</p>
+        <div class="rating">⭐⭐⭐⭐⭐</div>
+        <a href="#" class="btn-car">View Details</a>
+      </div>
+
+    </div>
+  </div>
+ 
+  <a href="/sub/EXCLUSIVE.html" target="_blank" class="cta-btn">click here to view luxury brand</a>
+</section>
+
+<section class="filter-section" id="filters">
+  <div class="filter-container">
+    <h2>🔍 Find Your Perfect Car</h2>
+    <form class="filter-form">
+
+      <!-- Search Bar -->
+      <div class="form-group">
+        <input type="text" placeholder="Search by car name or model..." name="search" />
+      </div>
+
+      <!-- Brand Filter -->
+      <div class="form-group">
+        <label for="brand">Brand:</label>
+        <select name="brand" id="brand">
+          <option value="">All Brands</option>
+          <option value="maruti">Maruti Suzuki</option>
+          <option value="tata">Tata</option>
+          <option value="mahindra">Mahindra</option>
+          <option value="hyundai">Hyundai</option>
+          <option value="kia">Kia</option>
+        </select>
+      </div>
+
+      <!-- Fuel Type Filter -->
+      <div class="form-group">
+        <label for="fuel">Fuel Type:</label>
+        <select name="fuel" id="fuel">
+          <option value="">All Types</option>
+          <option value="petrol">Petrol</option>
+          <option value="diesel">Diesel</option>
+          <option value="ev">Electric</option>
+          <option value="hybrid">Hybrid</option>
+        </select>
+      </div>
+
+      <!-- Transmission Filter -->
+      <div class="form-group">
+        <label for="transmission">Transmission:</label>
+        <select name="transmission" id="transmission">
+          <option value="">Any</option>
+          <option value="manual">Manual</option>
+          <option value="automatic">Automatic</option>
+        </select>
+      </div>
+
+      <!-- Price Range -->
+      <div class="form-group">
+        <label for="price">Max Price (in ₹ Lakhs):</label>
+        <input type="range" id="price" name="price" min="5" max="50" step="1" oninput="document.getElementById('price-value').innerText = this.value" />
+        <span id="price-value">25</span>
+      </div>
+
+      <!-- Submit Button -->
+      <div class="form-group full-width">
+        <button type="submit" class="btn-filter">Search Cars</button>
+      </div>
+
+    </form>
+  </div>
+</section>
+
+<!-- Tools Modal (Popup) -->
+<div class="tools-modal" id="toolsModal">
+  <div class="modal-content">
+    <span class="close-btn" id="closeModal">&times;</span>
+    <h2>Quick Tools</h2>
+    <div class="tool-grid">
+
+      <!-- EMI Calculator -->
+      <div class="tool-box">
+        <h3>EMI Calculator</h3>
+        <form class="tool-form">
+          <input type="number" placeholder="Loan Amount (₹)" />
+          <input type="number" placeholder="Interest Rate (%)" />
+          <input type="number" placeholder="Tenure (Years)" />
+          <button type="button">Calculate EMI</button>
+        </form>
+      </div>
+
+      <!-- Tax Estimator -->
+      <div class="tool-box">
+        <h3>Tax Estimator</h3>
+        <form class="tool-form">
+          <input type="number" placeholder="Car Price (₹)" />
+          <select>
+            <option value="">Select State</option>
+            <option value="ka">Karnataka</option>
+            <option value="mh">Maharashtra</option>
+            <option value="dl">Delhi</option>
+            <option value="tn">Tamil Nadu</option>
+          </select>
+          <button type="button">Estimate Tax</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>
+<script>
+  const toolsBtn = document.getElementById('tools-btn');
+  const toolsModal = document.getElementById('toolsModal');
+  const closeModal = document.getElementById('closeModal');
+
+  toolsBtn.addEventListener('click', function (e) {
+    e.preventDefault();
+    toolsModal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  });
+
+  closeModal.addEventListener('click', function () {
+    toolsModal.style.display = 'none';
+    document.body.style.overflow = 'auto';
+  });
+
+  window.addEventListener('click', function (e) {
+    if (e.target === toolsModal) {
+      toolsModal.style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
+  });
+</script>
+<section class="reviews-section" id="reviews">
+  <div class="reviews-container">
+    <h2>💬 What Our Users Say</h2>
+    <div class="review-grid">
+
+      <!-- Review 1 -->
+      <div class="review-card">
+        <div class="review-header">
+          <img src="user1.jpg" alt="User 1" class="avatar">
+          <div>
+            <h4>Rahul Verma</h4>
+            <div class="rating">⭐⭐⭐⭐⭐</div>
+          </div>
+        </div>
+        <p class="review-text">
+          I found my dream car here with the perfect EMI options. Love how clean the UI is!
+        </p>
+      </div>
+
+      <!-- Review 2 -->
+      <div class="review-card">
+        <div class="review-header">
+          <img src="user2.jpg" alt="User 2" class="avatar">
+          <div>
+            <h4>Priya Sharma</h4>
+            <div class="rating">⭐⭐⭐⭐☆</div>
+          </div>
+        </div>
+        <p class="review-text">
+          Very helpful tax calculator and car details. Just wish there were more EV listings.
+        </p>
+      </div>
+
+      <!-- Review 3 -->
+      <div class="review-card">
+        <div class="review-header">
+          <img src="user3.jpg" alt="User 3" class="avatar">
+          <div>
+            <h4>Aman Singh</h4>
+            <div class="rating">⭐⭐⭐⭐⭐</div>
+          </div>
+        </div>
+        <p class="review-text">
+          The best Indian car comparison tool out there. Saved me a lot of research time!
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+<section class="why-us-section" id="why-us">
+  <div class="why-us-container">
+    <h2>🚗 Why Choose CarVerse India?</h2>
+    <div class="why-us-grid">
+
+      <!-- Card 1 -->
+      <div class="why-card">
+        <img src="/static/Image/verified.png" alt="Verified" />
+        <h3>Verified Car Specs</h3>
+        <p>Accurate, up-to-date details for every car model you search.</p>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="why-card">
+        <img src="/static/Image/tools.png" alt="Tools" />
+        <h3>Smart Tools</h3>
+        <p>Use EMI calculators, tax estimators, and price filters in seconds.</p>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="why-card">
+        <img src="/static/Image/conversation.png" alt="Reviews" />
+        <h3>User Reviews</h3>
+        <p>Read real opinions from actual buyers and enthusiasts like you.</p>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="why-card">
+        <img src="/static/Image/folder-with-up-arrow.png" alt="Export" />
+        <h3>Export & Save</h3>
+        <p>Save your selections or export them to Excel with one click.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!--CTA Section-->>
+<section class="cta-section fade-in-bounce" id="cta">
+  <div class="cta-container">
+    <h2>🚀 Ready to Drive Your Dream Car?</h2>
+    <p>Join thousands of users comparing prices, checking EMIs, and finding their perfect car every day.</p>
+    <div class="cta-buttons">
+      <a href="#all-cars" class="btn-cta primary">Browse All Cars</a>
+      <a href="#login" class="btn-cta secondary">Sign Up / Log In</a>
+    </div>
+  </div>
+</section>
+<!-- CAT Script-->>
+<script>
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  });
+
+  const cta = document.querySelector('.fade-in-bounce');
+  if (cta) {
+    observer.observe(cta);
+  }
+</script>
+
+</body>
+</html>
