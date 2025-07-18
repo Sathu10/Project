@@ -31,10 +31,33 @@
         </li>
         <li><a href="#" id="tools-btn">Tools</a></li>
         <li><a href="#reviews">Reviews</a></li>
-      </ul>
-     <a href="/login" class="login-btn">Login</a>
-      <a href="/register" class="register-btn">Register</a>
-    </nav>
+        </ul>
+        <!-- Login Button -->
+<a href="/login" id="login-btn" style="
+  background-color: #00b7ff;
+  color: white;
+  padding: 0.5rem 1.2rem;
+  border-radius: 20px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+">Login/Sign Up</a>
+
+<!-- Internal JavaScript for Hover -->
+<script>
+  const loginBtn = document.getElementById("login-btn");
+
+  loginBtn.addEventListener("mouseover", () => {
+    loginBtn.style.backgroundColor = "#008fd1";
+  });
+
+  loginBtn.addEventListener("mouseout", () => {
+    loginBtn.style.backgroundColor = "#00b7ff";
+  });
+</script>
+
+      </nav>
   </div>
 </header>
 
