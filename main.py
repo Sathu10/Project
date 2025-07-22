@@ -20,7 +20,7 @@ async def read_index(request: Request):
 app.mount("/sub", StaticFiles(directory="sub"), name="sub")
 
 # Route for exclusive page
-@app.get("/sub/EXCLUSIVE.html", response_class=HTMLResponse)
+@app.get("/EXCLUSIVE.html", response_class=HTMLResponse)
 async def read_exclusive(request: Request):
     return templates.TemplateResponse("EXCLUSIVE.html", {"request": request})
 
@@ -31,6 +31,6 @@ async def login_get(request: Request):
 
 
 # ✅ Registration page (GET)
-@app.get("/register", response_class=HTMLResponse)
+@app.get("/register.html", response_class=HTMLResponse)
 async def register_get(request: Request):
     return templates.TemplateResponse("register.html", {"request": request})

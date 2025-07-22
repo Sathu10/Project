@@ -6,6 +6,8 @@
   <title>CarVerse India - Hero</title>
   <link rel="stylesheet" href="/static/style.css"/>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
 </head>
 <header class="header">
   <div class="container">
@@ -59,19 +61,74 @@
 
       </nav>
   </div>
+  <!-- Search bar and future profile space -->
+<div class="nav-search-area">
+  <form class="header-search-form" action="#">
+    <input type="text" placeholder="Search cars..." />
+    <button type="submit"><i class="fas fa-search"></i></button>
+  </form>
+
+  <!-- Future profile placeholder -->
+  <div class="profile-placeholder" title="Profile Coming Soon"></div>
+</div>
 </header>
 
 <body>
-  
-  <section class="hero">
-    <div class="hero-content">
-      <h1>Explore Every Indian Car. Smarter.</h1>
-      <p>Get specs, prices, EMI, and reviews at your fingertips.</p>
-      <div class="hero-buttons">
-        <a href="#all-cars" class="btn primary">View All Cars</a>
-      </div>
+  <!--hero section-->>
+  <section class="hero-showcase" id="heroShowcase">
+  <div class="hero-content">
+    <h1 class="hero-title">Find Your Perfect Car</h1>
+    <p class="hero-subtitle">From trusted Indian brands like Tata, Hyundai, and Maruti Suzuki</p>
+
+    <div class="brand-selector">
+      <button class="brand-btn" data-brand="tata">Tata</button>
+      <button class="brand-btn" data-brand="hyundai">Hyundai</button>
+      <button class="brand-btn" data-brand="maruti">Maruti Suzuki</button>
     </div>
-  </section>
+  </div>
+</section>
+
+  <!--hero section js-->
+  <script>
+  const brandButtons = document.querySelectorAll('.brand-btn');
+const carImage = document.getElementById('carImage');
+const heroSection = document.getElementById('heroShowcase');
+
+const brandData = {
+  tata: {
+    bg: 'url("/static/Image/tata car.png")'
+  },
+  hyundai: {
+    bg: 'url("/static/images/hyundai.png")'
+  },
+  maruti: {
+    bg: 'url("/static/images/maruti.png")'
+  }
+};
+
+brandButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const brand = btn.dataset.brand;
+    heroSection.style.backgroundImage = brandData[brand].bg;
+  });
+});
+
+
+brandButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const brand = btn.dataset.brand;
+    heroSection.style.background = brandData[brand].bg;
+
+    // Add fade animation
+    carImage.style.opacity = 0;
+    setTimeout(() => {
+      carImage.src = brandData[brand].img;
+      carImage.style.opacity = 1;
+    }, 200);
+  });
+});
+</script>
+
   <section class="brands-section" id="brands">
   <div class="brands-container">
     <h2>Popular Car Brands in India</h2>
@@ -157,7 +214,7 @@
     </div>
   </div>
  
-  <a href="/sub/EXCLUSIVE.html" target="_blank" class="cta-btn">click here to view luxury brand</a>
+  <a href="/EXCLUSIVE.html" target="_blank" class="cta-btn">click here to view luxury brand</a>
 </section>
 
 <section class="filter-section" id="filters">

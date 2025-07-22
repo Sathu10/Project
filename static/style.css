@@ -17,6 +17,7 @@
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
+  gap: 1.5rem;
 }
 
 .logo a {
@@ -34,6 +35,7 @@
   display: flex;
   align-items: center;
   gap: 1.5rem;
+  margin-right: auto
 }
 
 .nav-links {
@@ -66,79 +68,169 @@
 .btn-nav:hover {
   background: #008fd1;
 }
+/* Search bar and profile placeholder */
+.nav-search-area {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin-right: 1.5rem;
+}
+/* ... existing styles ... */
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+
+.search-box {
+  position: relative;
+}
+
+.search-box input {
+  padding: 0.5rem 2rem 0.5rem 1rem;
+  border-radius: 30px;
+  border: none;
+  outline: none;
+  width: 200px;
+}
+
+.search-box button {
+  position: absolute;
+  right: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #00b7ff;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+
+.header-search-form {
+  display: flex;
+  align-items: center;
+  background: white;
+  border-radius: 30px;
+  padding: 0.2rem 0.6rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.header-search-form input[type="text"] {
+  border: none;
+  outline: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 30px;
+  font-size: 0.95rem;
+  width: 160px;
+}
+
+.header-search-form button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #00b7ff;
+  font-size: 1rem;
+  padding: 0.3rem;
+}
+
+.profile-placeholder {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 2px dashed #00b7ff;
+  background: transparent;
+  cursor: default;
+}
+
 /* Hero Section */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Poppins', sans-serif;
-  color: white;
-  background-color: #0a0f2c;
-}
-
-.hero {
-  height: 100vh;
+.hero-showcase {
   width: 100%;
-  background: linear-gradient(135deg, #0057ff, #00b7ff);
+  height: 100vh;
+  background: url('/static/Image/tata car.png') no-repeat center center/cover;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2rem;
-  text-align: center;
+  position: relative;
+  color: white;
+  transition: background-image 0.5s ease-in-out;
 }
 
-.hero-content h1 {
+.hero-content {
+  padding: 2rem;
+  border-radius: 15px;
+  text-align: center;
+  max-width: 700px;
+  background: none !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+   background-color: transparent !important;
+   border-radius: 0 !important;
+}
+
+
+.hero-title {
   font-size: 3rem;
   font-weight: 700;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 
-.hero-content p {
-  font-size: 1.2rem;
+.hero-subtitle {
+  font-size: 1.3rem;
   font-weight: 400;
   margin-bottom: 2rem;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
-.hero-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  flex-wrap: wrap;
+.brand-selector {
+  margin-bottom: 2rem;
 }
 
-.btn {
-  padding: 0.75rem 1.5rem;
-  border-radius: 30px;
-  text-decoration: none;
+.brand-btn {
+  background-color: white;
+  color: #333;
+  border: none;
+  border-radius: 50px;
+  padding: 0.6rem 1.5rem;
+  margin: 0 0.5rem;
+  font-size: 1rem;
   font-weight: 600;
-  transition: all 0.3s ease;
+  cursor: pointer;
+  transition: background 0.3s ease;
 }
 
-.btn.primary {
-  background-color: #fff;
-  color: #0057ff;
+.brand-btn:hover {
+  background-color: #f1f1f1;
 }
 
-.btn.primary:hover {
-  background-color: #e6e6e6;
-  transform: scale(1.05);
+.car-display {
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+  transition: transform 0.4s ease, opacity 0.4s ease;
 }
 
-.btn.secondary {
-  border: 2px solid white;
-  color: white;
+.car-display img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: contain;
+  animation: fadeIn 0.5s ease;
 }
 
-.btn.secondary:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  transform: scale(1.05);
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
+
+
 /* Brand Logos Section */
 .brands-section {
   background: #f5faff;
